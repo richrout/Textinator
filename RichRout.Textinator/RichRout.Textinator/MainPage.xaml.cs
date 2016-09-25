@@ -13,5 +13,9 @@ namespace RichRout.Textinator
         {
             InitializeComponent();
         }
+        void Handle_FabClicked(object sender, System.EventArgs e)
+        {
+            this.DisplayAlert("Floating Action Button", "You clicked the FAB!", "Awesome!");
+        }
     }
 }

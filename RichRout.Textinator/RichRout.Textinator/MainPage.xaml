@@ -2,10 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RichRout.Textinator"
+             xmlns:forms="clr-namespace:FAB.Forms;assembly=FAB.Forms"
              x:Class="RichRout.Textinator.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <ContentPage.Content>
+    <RelativeLayout>
+      <ContentView
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+        <ListView
+					x:Name="list"
+					BackgroundColor="White">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <TextCell
+								Text="{Binding .}" />
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </ContentView>
+      <forms:FloatingActionButton
+				x:Name="fabBtn"
+				Source="plus.png"
+				Size="Normal"
+				Clicked="Handle_FabClicked"
+				RippleColor="Gray"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-75}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-75}" />
+    </RelativeLayout>
+  </ContentPage.Content>
 
 </ContentPage>
