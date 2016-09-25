@@ -13,7 +13,7 @@ namespace RichRout.Textinator
         {
             InitializeComponent();
 
-            MainPage = new RichRout.Textinator.MainPage();
+            MainPage = new NavigationPage(new RichRout.Textinator.MainPage());
         }
 
         protected override void OnStart()

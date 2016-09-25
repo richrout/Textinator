@@ -13,9 +13,10 @@ namespace RichRout.Textinator
         {
             InitializeComponent();
         }
-        void Handle_FabClicked(object sender, System.EventArgs e)
+
+        async void Handle_FabClicked(object sender, EventArgs e)
         {
-            this.DisplayAlert("Floating Action Button", "You clicked the FAB!", "Awesome!");
+            await Navigation.PushAsync(new EditPage());
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RichRout.Textinator.EditPage">
+
+  <ContentPage.Content>
+    <StackLayout>
+      <Grid RowSpacing="12" ColumnSpacing="12" Margin="12,12,12,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="36"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="ic_person_black_24dp.png" Grid.Row="0" Grid.Column="0" Opacity="0.4"></Image>
+        <Entry x:Name="Contact" Placeholder="To" Grid.Row="0" Grid.Column="1"></Entry>
+
+        <Image Source="ic_note_black_24dp.png" Grid.Row="1" Grid.Column="0" Opacity="0.4"></Image>
+        <Entry x:Name="Name" Placeholder="Name" Grid.Row="1" Grid.Column="1"></Entry>
+
+        <Image Source="ic_message_black_24dp.png" Grid.Row="2" Grid.Column="0" Opacity="0.4"></Image>
+        <Entry x:Name="Message" Placeholder="Message" Grid.Row="2" Grid.Column="1"></Entry>
+      </Grid>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
