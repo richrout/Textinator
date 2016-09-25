@@ -11,15 +11,22 @@ namespace RichRout.Textinator
 {
     public partial class EditPage : ContentPage
     {
+        public EditTemplateModel Model { get; set; }
         public EditPage()
         {
+            Model = new EditTemplateModel();
             Title = "Create New";
-            ToolbarItems.Add(new ToolbarItem("Filter", "ic_check_white_24dp.png", async () =>
-            {
-                var page = new ContentPage();
-                var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
-            }));
+            ToolbarItems.Add(new ToolbarItem("Filter", "ic_check_white_24dp.png", OnSave));
+
+            BindingContext = Model;
             InitializeComponent();
+        }
+
+        private async void OnSave()
+        {
+            var page = new ContentPage();
+            var result = await page.DisplayAlert(Model.Contact, Model.Message, "Accept", "Cancel");
+            await this.Navigation.PopAsync();
         }
     }
 
