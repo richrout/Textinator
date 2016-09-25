@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace RichRout.Textinator
 {
-    public class EditTemplateModel
+    public class TemplateItem
     {
-        public EditTemplateModel()
+        public TemplateItem()
         {
-            Contact = "Bob";
+            Id = Guid.NewGuid();
         }
+
+        [PrimaryKey]
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
         public string Contact { get; set; }
