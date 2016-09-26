@@ -15,17 +15,15 @@
 					x:Name="TemplateList" ItemSelected="TemplateList_OnItemSelected">
           <ListView.ItemTemplate>
             <DataTemplate>
-              <ViewCell>
-                <ViewCell.ContextActions>
+              <ImageCell Text="{Binding Name}" Detail="{Binding Message}" ImageSource="ic_message_black_24dp.png">
+                <ImageCell.ContextActions>
                   <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}"
                      Text="Edit" Icon="ic_edit_white_24dp" />
                   <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
                      Text="Delete" Icon="ic_delete_white_24dp" IsDestructive="True" />
-                </ViewCell.ContextActions>
-                <StackLayout Padding="15,0">
-                  <Label Text="{Binding Name}" />
-                </StackLayout>
-              </ViewCell>
+                </ImageCell.ContextActions>
+                </ImageCell>
+
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>

@@ -41,6 +41,8 @@
     <Compile Include="EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ISmsService.cs" />
+    <Compile Include="Interfaces\ISqLite.cs" />
     <Compile Include="TemplateItem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

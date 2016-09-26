@@ -2,4 +2,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
 	<application android:label="RichRout.Textinator.Droid"></application>
+  <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>

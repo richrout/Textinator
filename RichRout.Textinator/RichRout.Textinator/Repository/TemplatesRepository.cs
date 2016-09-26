@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RichRout.Textinator.Interfaces;
 using SQLite;
 using Xamarin.Forms;
 
@@ -15,14 +16,14 @@ namespace RichRout.Textinator.Repository
         SQLiteConnection database;
         public TemplatesRepository()
         {
-            database = DependencyService.Get<ISQLite>().GetConnection();
+            database = DependencyService.Get<ISqLite>().GetConnection();
             database.CreateTable<TemplateItem>();
         }
         public IEnumerable<TemplateItem> GetItems()
         {
             lock (locker)
             {
-                return (from i in database.Table<TemplateItem>() select i).OrderBy(c=>c.Name).ToList();
+                return database.Table<TemplateItem>().ToList().OrderBy(c => c.Name.ToLower());
             }
         }
         public TemplateItem GetItem(Guid id)
@@ -46,9 +47,5 @@ namespace RichRout.Textinator.Repository
                 return database.InsertOrReplace(item);
             }
         }
-    }
-    public interface ISQLite
-    {
-        SQLiteConnection GetConnection();
     }
 }

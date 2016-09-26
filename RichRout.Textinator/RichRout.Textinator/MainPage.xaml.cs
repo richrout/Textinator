@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RichRout.Textinator.Interfaces;
 using RichRout.Textinator.Repository;
 using Xamarin.Forms;
 
@@ -43,10 +44,15 @@ namespace RichRout.Textinator
             TemplateList.ItemsSource = repo.GetItems();
         }
 
-        private void TemplateList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void TemplateList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var mi = (MenuItem)sender;
-            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
+            var templateItem = e.SelectedItem as TemplateItem;
+            var result = await DisplayAlert("Send To " + templateItem.Contact, templateItem.Message, "Send", "Cancel");
+            if (result)
+            {
+                var sms = DependencyService.Get<ISmsService>();
+                sms.Send(templateItem.Contact, templateItem.Message);
+            }
         }
     }
 }

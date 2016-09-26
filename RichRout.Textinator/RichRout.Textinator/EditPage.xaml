@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <Image Source="ic_person_black_24dp.png" Grid.Row="0" Grid.Column="0" Opacity="0.4"></Image>
-        <Entry Text="{Binding Contact}" Placeholder="To" Grid.Row="0" Grid.Column="1"></Entry>
+        <Entry Text="{Binding Contact}" Keyboard="Telephone" Placeholder="To" Grid.Row="0" Grid.Column="1"></Entry>
 
         <Image Source="ic_note_black_24dp.png" Grid.Row="1" Grid.Column="0" Opacity="0.4"></Image>
         <Entry Text="{Binding Name}" Placeholder="Name" Grid.Row="1" Grid.Column="1"></Entry>

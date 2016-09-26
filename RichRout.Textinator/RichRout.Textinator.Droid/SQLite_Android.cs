@@ -2,13 +2,14 @@ using System;
 using Xamarin.Forms;
 using System.IO;
 using RichRout.Textinator.Droid;
+using RichRout.Textinator.Interfaces;
 using RichRout.Textinator.Repository;
 
 [assembly: Dependency(typeof(SQLite_Android))]
 
 namespace RichRout.Textinator.Droid
 {
-    public class SQLite_Android : ISQLite
+    public class SQLite_Android : ISqLite
     {
         public SQLite_Android()
         {
