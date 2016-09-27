@@ -47,12 +47,18 @@ namespace RichRout.Textinator
         private async void TemplateList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var templateItem = e.SelectedItem as TemplateItem;
+            if (templateItem == null)
+            {
+                return;
+            }
+
             var result = await DisplayAlert("Send To " + templateItem.Contact, templateItem.Message, "Send", "Cancel");
             if (result)
             {
                 var sms = DependencyService.Get<ISmsService>();
                 sms.Send(templateItem.Contact, templateItem.Message);
             }
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

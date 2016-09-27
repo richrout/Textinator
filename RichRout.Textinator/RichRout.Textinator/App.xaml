@@ -5,6 +5,10 @@
   <Application.Resources>
 
     <!-- Application resource dictionary -->
-
+    <ResourceDictionary>
+      <x:String x:Key="AccentColor">#F44336</x:String>
+      <x:String x:Key="AccentColorSecondary">#C62828</x:String>
+      <x:String x:Key="ColourPrimaryDark">#1976D2</x:String>
+    </ResourceDictionary>
   </Application.Resources>
 </Application>
